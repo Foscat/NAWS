@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>NAWS</title>
+
+		<style>
+			/* h1,h2,h3,h4,h5,h6{
+				color:#bbe1fa;
+			} */
+			body{
+				margin: 50px;
+				background-color: #1b262c;
+				color: #bbe1fa;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+			footer{
+				bottom: 0;
+				position: absolute;
+			}
+			#header{
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: center;
+				background-color: #0f4c75;
+				color:#bbe1fa;
+				padding: 50px;
+			}
+			#mainContent{
+				display: flex;
+				flex-direction: row;
+				background-color: #bbe1fa;
+				color: #1b262c;
+				padding: 15px;
+
+			}
+			#userInfo{
+				border: #1b262c solid 3px;
+				border-radius: 10px;
+				padding: 20px;
+			}
+			.mx-auto{margin: 0 auto;}
+			.center-text{text-align: center;}
+			.listNone{list-style: none;}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="header">
+			<div class="mx-auto">
+				<h1 class="center-text">Welcome to NAWS</h1>
+				<h2 class="center-text">We want to welcome you to the community and say thanks.</h2>
+			</div>
+		</div>
+
+		<div id="mainContent">
+			<div class="mx-auto" id="userInfo">
+				<h3>Your NAWS user information</h3>
+				<ul class="listNone">
+					<li>Username: ${userInfo.username}</li>
+					<li>Password: ${userInfo.password}</li>
+				</ul>
+			</div>
+		</div>
+		
+	</body>
+
+	<footer>
+		<h3 class="center-text">NAWS 2020</h3>
+	</footer>
+</html>
