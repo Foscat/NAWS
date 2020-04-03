@@ -29,7 +29,7 @@ class App extends Component {
     }
 
     componentDidUpdate(){
-        // console.log("App update state:", this.state);  // Comment in for degugging
+        console.log("App update state:", this.state);  // Comment in for degugging
     }
 
     // General handler for inputs thats value is to change the state

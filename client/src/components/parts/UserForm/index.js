@@ -37,14 +37,23 @@ class UserForm extends Component {
 
     handleInputChange = event => {
         const {name, value} = event.target;
-        // console.log("name", name, "value", value);
+        console.log("name", name, "value", value);
         this.setState({ [name]: value });
         if(name === 'createUsername' || name === 'createPassword'){
-            // console.log("caught in check");
-            if(name === "createUsername")event.target.name = "logInUsername";
-            else event.target.name = "logInPassword";
-            this.props.appChange(event);
-        }
+            console.log("caught in check");
+            if(name === "createUsername"){
+                event.target.name = "logInUsername";
+                this.props.appChange(event);
+                event.target.name = "createUsername";
+            }
+            else{ 
+                event.target.name = "logInPassword";
+                this.props.appChange(event);
+                event.target.name = "createPassword";
+            };
+            
+        };
+        
     }
 
     handleSubmit = () => {
