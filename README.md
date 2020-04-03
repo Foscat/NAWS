@@ -4,8 +4,11 @@ Not Another Workflow Service
 ### **Built using node version 11.2.0**
 
 ## Overview
-A ripoff of Trello, Monday, Github Project Boards and basically all the other taskflow mangement systems. Allows a user to make an account, create a board,
-add collaborators, drag and drop features for tasks and a way to send an email notificaton to alert collaborators of major changes from the site.
+A simplified workflow service made for small developer teams to break Epics into boards. 
+To keep teams only on relevnt info for the task at hand.
+
+### Upcoming Features
+Ability to get a excel spreadsheetdownload of board info. And the ability to generate a board using a excel spreadsheet or JSON file.
 
 ### Dependencies 
 
@@ -32,4 +35,4 @@ add collaborators, drag and drop features for tasks and a way to send an email n
 - Reactstrap - Special components made just for react
 - Moment - For easy formatting of dates
 
-See a working delpoyed version here: 
+See a working delpoyed version here: https://aqueous-retreat-73511.herokuapp.com/
