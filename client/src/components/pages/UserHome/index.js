@@ -35,7 +35,7 @@ class UserHome extends Component {
     // Call back end for board tied to the user by user._id wwhich getas boards with matiching _adminId
     getBoards = () => {
       API.getUserBoards(this.state.user._id).then(res=>{
-        console.log("Get user boards res:", res.data);
+        // console.log("Get user boards res:", res.data); // Comment back in for degugging
         this.setState({ myBoards: res.data});
       }).catch(err=>console.error("Get boards hit an error", err));
     }
@@ -81,7 +81,7 @@ class UserHome extends Component {
      */
     deleteBoard = id => {
       API.deleteBoard(id).then(res=>{
-        console.log("Delete board response", res);
+        // console.log("Delete board response", res); // Comment back in for degugging
         this.getBoards();
       }).catch(err=>console.error("Delete board hit an error",err));
       this.setState({ show: false });
@@ -116,7 +116,7 @@ class UserHome extends Component {
 
     // Confirm that the user is wanting to reove colab rights
     confirmColabRemoval = board => {
-      console.log("Remove self colab status from board", board);
+      // console.log("Remove self colab status from board", board);  // Comment back in for degugging
       this.setState({ 
         title: "Remove yourself as a collaborator from this board?",
         text: <Button className="p-3" onClick={()=>this.removeColabStatus(board.id)} style={styles.btn}>Yes</Button>,
@@ -127,14 +127,14 @@ class UserHome extends Component {
     // If a user chooses to remove thier right to collaborate on a board
     removeColabStatus = boardId =>{
       // Check that incoming data is correct
-      console.log("remove colab status of", this.state.user._id, "on board", boardId);
+      // console.log("remove colab status of", this.state.user._id, "on board", boardId); // Comment back in for degugging
       // Removes this board from this user's colabBoards
       API.removeColabRights(this.state.user._id,boardId).then(res=>{
-        console.log("Remove yourself from board colabs response", res);
+        // console.log("Remove yourself from board colabs response", res); // Comment back in for degugging
       }).catch(err=> console.error("Removing yourself from board colabs error", err));
       // Find board by id 
       API.getBoard(boardId).then(foundBoard=>{
-        console.log("Found board:",foundBoard);
+        // console.log("Found board:",foundBoard); // Comment back in for degugging
         let remIndex;
         // Search current colabs and find the user to be romoved. Once found use its index to spice it from the array
         foundBoard.data.collaborators.forEach((colab,i) => {
@@ -144,10 +144,10 @@ class UserHome extends Component {
         });
         // Remove user from colab list
         foundBoard.data.collaborators.splice(remIndex,1);
-        console.log("Colab after change", foundBoard.data.collaborators);
+        // console.log("Colab after change", foundBoard.data.collaborators); // Comment back in for degugging
         // Update board with new colab list
         API.updateBoard(boardId,{collaborators:foundBoard.data.collaborators}).then(updatedBoard => {
-          console.log("Updated board response", updatedBoard);;
+          // console.log("Updated board response", updatedBoard); // Comment back in for degugging
         }).catch(updateErr=>console.error("Update board error", updateErr));
       })
       window.location.reload(false); // Comment out for testing

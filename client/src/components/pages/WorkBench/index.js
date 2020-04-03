@@ -26,13 +26,13 @@ class WorkBench extends Component {
   }
 
   componentDidMount(){
-    console.log("Workbench mount state:", this.state);
+    // console.log("Workbench mount state:", this.state); // Comment back in for degugging
     // When component loads call backend for board to show
     this.giveBoard();
   }
 
   componentDidUpdate(){
-    console.log("Workbench update state:", this.state);
+    // console.log("Workbench update state:", this.state); // Comment back in for degugging
   }
 
   // General handler for inputs thats value is to change the state

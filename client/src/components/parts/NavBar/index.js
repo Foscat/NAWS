@@ -172,7 +172,7 @@ class NavBar extends Component  {
                                 </li>
                                 <li className="nav-item">
                                     <Button style={styles.btn} onClick={()=>this.signUpUserModal()}>
-                                        Join Today!
+                                        Join Today! &#10093;
                                     </Button>
                                 </li>
                             </ul>

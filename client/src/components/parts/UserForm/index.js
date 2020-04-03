@@ -37,10 +37,12 @@ class UserForm extends Component {
 
     handleInputChange = event => {
         const {name, value} = event.target;
-        console.log("name", name, "value", value);
+        // console.log("name", name, "value", value);
         this.setState({ [name]: value });
         if(name === 'createUsername' || name === 'createPassword'){
-            console.log("caught in check")
+            // console.log("caught in check");
+            if(name === "createUsername")event.target.name = "logInUsername";
+            else event.target.name = "logInPassword";
             this.props.appChange(event);
         }
     }
@@ -56,8 +58,7 @@ class UserForm extends Component {
                 phone_num: s.createPhoneNum
             })
             .then(res=>{
-                console.log("Add user res",res);  // Comment in for degugging
-                this.props.autoLogIn(s.createUsername, s.createPassword);
+                // console.log("Add user res",res);  // Comment in for degugging
                 // Once a user has been added send them a email with welcom info
                 API.newMemeberMessage({userInfo:{
                     name: s.createName,
@@ -69,7 +70,7 @@ class UserForm extends Component {
                     console.log("Email Sent");
                 }).catch(err => console.error("New member email hit an error",err));
                 // Auto log in
-                this.props.autoLogIn(s.username,s.password);
+                this.props.autoLogIn();
                 // Return state values to empty
                 this.setState({ 
                     createName: "",

@@ -29,7 +29,7 @@ class App extends Component {
     }
 
     componentDidUpdate(){
-        console.log("App update state:", this.state);  // Comment in for degugging
+        // console.log("App update state:", this.state);  // Comment in for degugging
     }
 
     // General handler for inputs thats value is to change the state
@@ -61,7 +61,7 @@ class App extends Component {
         })
         // After form submits call function to get all users to see updated info and close model
         .then(res => {
-            console.log("Sign in res",res.data);
+            // console.log("Sign in res",res.data);  // Comment back in for degugging
             if(res.data.user){
                 this.setState({show: false, user: res.data.user[0], loggedIn:true});
                 localStorage.setItem("token",res.data.info);
@@ -76,7 +76,7 @@ class App extends Component {
     authenticate = async () => {
         API.currentUser({token: this.state.token})
         .then(res => {
-            console.log("Authenticate res",res);
+            // console.log("Authenticate res",res); // Comment back in for degugging
             if(res.data.length){
                 if(res.data[0].theme)localStorage.setItem("colorTheme", res.data[0].theme);
                 this.setState({ user: res.data[0], loggedIn: true });
@@ -85,7 +85,7 @@ class App extends Component {
             else return "Error"
         })
         .catch(err => {
-            console.error("Authentication error", err);
+            // console.error("Authentication error", err);  // Comment back in for degugging
             return err;
         })
     }
