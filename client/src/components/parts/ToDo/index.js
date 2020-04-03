@@ -24,15 +24,17 @@ const ToDo = ({ onClick, todo, progress,  hov, check, id, edit, deleteCard }) =>
             </CardHeader>
             <CardBody style={styles.inner}>
                 <CardText style={styles.text}>{todo.text}</CardText>
+                <Row>
+                    {todo.priority ? (
+                        <Col sm="12">
+                            <h6 className="text-center">Priority level {todo.priority}  </h6>
+                        </Col>
+                    ): null}
+                </Row>
                 <Row style={{justifyContent:"space-around"}}>
                     <Col sm="3">
                         <Button style={styles.btn2} onClick={()=>deleteCard(progress, id)}>X</Button>
                     </Col>
-                    {todo.priority ? (
-                        <Col sm="3">
-                            <h6 className="text-center">Priority level {todo.priority}  </h6>
-                        </Col>
-                    ): null}
                     <Col sm="3">
                         <Button style={styles.btn} onClick={()=>edit(progress, id, {t:todo.title,d:todo.text,p:todo.priority})}>
                             Edit

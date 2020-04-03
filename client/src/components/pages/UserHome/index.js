@@ -44,7 +44,7 @@ class UserHome extends Component {
     createBoardModal = () => {
         this.setState({ 
           title:"Create a new board",
-          text: <BoardForm adminId={this.state.user._id} refresh={this.getBoards()}  type="create" />,
+          text: <BoardForm adminId={this.state.user._id} refresh={()=> window.location.reload(false)}  type="create" />,
           show: true
         });
     }
@@ -268,6 +268,8 @@ const styles = {
   center: theme.classes.page,
   sweetBox:theme.classes.sweetBox,
   header: { 
+    margin: "5px",
+    borderRadius: ".5em",
     backgroundColor: theme.colors.background,
     color: theme.colors.secondary
   },
