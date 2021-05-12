@@ -33,7 +33,7 @@
     "minimist": "^1.2.5",
     "moment": "^2.24.0",
     "mongoose": "^5.7.8",
-    "nodemailer": "^6.4.3",
+    "nodemailer": "^6.4.16",
     "prop-types": "^15.7.2",
     "react": "^16.11.0"
   },
