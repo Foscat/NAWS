@@ -31,7 +31,7 @@
     "jsonwebtoken": "^8.5.1",
     "kind-of": ">=6.0.3",
     "minimist": "^1.2.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongoose": "^5.7.8",
     "nodemailer": "^6.4.3",
     "prop-types": "^15.7.2",
